@@ -1,0 +1,11 @@
+http://www.macuknow.com/node/69088
+
+
+第三步：輸入終端機指令
+
+▼上一步格式化USB隨身碟之後，請開啟『終端機』（應用程式>>工具程式 裡面），然後請直接複製、貼上以下終端機指令：
+
+sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
+
+▼像以下這樣，然後輸入你的管理者密碼（不會顯示出來），輸入完後按下enter。
+
