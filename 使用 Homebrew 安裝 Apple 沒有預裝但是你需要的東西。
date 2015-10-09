@@ -1,0 +1,39 @@
+http://brew.sh/index_zh-tw.html
+http://blog.visioncan.com/2014/introducing-cask/
+http://blog.lyhdev.com/2011/06/homebrew-mac-os-x.html
+
+使用 Homebrew 安裝 Apple 沒有預裝但是你需要的東西。
+
+由於 OSX 上有的套件需要作編譯後才能使用，所以我們得先裝 Xcode Command Tool。
+
+再來裝 Homebrew , Homebrew 是 Mac OSX 上的的套件管理工具，是方便安裝管理 OSX 裡需要用到但預設沒安裝的套件。
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+例如，安裝了 wget 跟 git
+brew install wget
+brew install git
+brew install maven
+
+最後才裝 caskroom
+brew install caskroom/cask/brew-cask
+
+Homebrew 會將 packages 安裝在他們自己的目錄，然後把檔案 symlink 到 /usr/local 下。
+/usr/local/Caller
+
+Homebrew 不會把檔案放在預設路徑之外的地方，因此可以在任何位置使用 Homebrew 安裝程式。
+
+指令
+更新套件清單
+brew update
+
+搜尋某項軟體
+brew search 軟體名稱
+
+安裝新軟體
+brew install 軟體名稱
+
+移除軟體
+brew uninstall 軟體名稱
+
+例如要安裝 wget ，可以輸入：
+brew install wget
