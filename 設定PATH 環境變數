@@ -1,8 +1,16 @@
 http://elf8848.iteye.com/blog/1582137
 http://edscb.blogspot.tw/2014/02/mac-osx.html
 
+==若PATH以亂，可reset PATH==
+source /etc/profile
+
 1.打開終端機
 2.touch ~/.bash_profile; open ~/.bash_profile
+
+貼下內容
+alias ll='ls -la'
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
 3.將路徑輸入在檔案裡
  example: export PATH=/aaa/bb/bin:$PATH
 4.設置命令别名alias ll=’ls -la’
