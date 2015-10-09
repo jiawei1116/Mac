@@ -1,0 +1,36 @@
+http://elf8848.iteye.com/blog/1582137
+http://edscb.blogspot.tw/2014/02/mac-osx.html
+
+1.打開終端機
+2.touch ~/.bash_profile; open ~/.bash_profile
+3.將路徑輸入在檔案裡
+ example: export PATH=/aaa/bb/bin:$PATH
+4.設置命令别名alias ll=’ls -la’
+source ~/.bash_profile 
+這可以讓系統去執行 .bash_profile 使路徑馬上生效
+
+Mac 啓動加載文件位置（可設置環境變量）
+-------------------------------------------------------
+ （1）首先要知道你使用的Mac OS X是什麼樣的Shell，使用命令
+echo $SHELL
+如果輸出的是：csh或者是tcsh，那麼你用的就是C Shell。
+如果輸出的是：bash，sh，zsh，那麼你的用的可能就是Bourne Shell的一個變種。
+Mac OS X 10.2之前默認的是C Shell。
+Mac OS X 10.3之後默認的是Bourne Shell。
+ 
+（2）如果是Bourne Shell。
+那麼你可以把你要添加的環境變量添加到你主目錄下面的.profile或者.bash_profile，如果存在沒有關係添加進去即可，如果沒有生成一個。
+ 
+ 1./etc/profile   （建議不修改這個文件 ）
+ 全局（公有）配置，不管是哪個用戶，登錄時都會讀取該文件。
+ 
+ 2./etc/bashrc    （一般在這個文件中添加系統級環境變量）
+ 全局（公有）配置，bash shell執行時，不管是何種方式，都會讀取此文件。
+ 我在這裡加入mysqlstart、mysql和mysqladmin命令的別名，保證每一個用戶都可以使用這3個命令。
+ 
+ 3.~/.bash_profile  （一般在這個文件中添加用戶級環境變量）
+（注：Linux 裡面是 .bashrc 而 Mac 是 .bash_profile）
+ 若bash shell是以login方式執行時，才會讀取此文件。該文件僅僅執行一次!默認情況下,他設置一些環境變量
+ 我在這裡：設置終端配色、
+ 我在這裡：設置命令別名alias ll='ls -la'
+ 我在這裡：設置環境變量：export PATH=/opt/local/bin:/opt/local/sbin:$PATH
