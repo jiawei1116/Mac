@@ -1,10 +1,22 @@
-http://brew.sh/index_zh-tw.html
+Cask 讓 OSX 安裝軟體更有效率
 http://blog.visioncan.com/2014/introducing-cask/
+
+Homebrew 讓 Mac OS X 輕鬆安裝軟體工具
 http://blog.lyhdev.com/2011/06/homebrew-mac-os-x.html
+
+在 Mac OS X 中安裝 Homebrew 套件管理工具
+http://edentsai231.logdown.com/posts/151421-install-homebrew-in-mac-os-x
+
+Homebrew: 新一代 OSX 套件管理工具
+https://ihower.tw/blog/archives/4308/comment-page-1
 
 使用 Homebrew 安裝 Apple 沒有預裝但是你需要的東西。
 
 由於 OSX 上有的套件需要作編譯後才能使用，所以我們得先裝 Xcode Command Tool。
+Command Line Tools For XCode
+自行安裝 Command Line Tools For XCode
+利用 Terminal 輸入簡單指令進行安裝 Command Line Tools
+xcode-select --install
 
 再來裝 Homebrew , Homebrew 是 Mac OSX 上的的套件管理工具，是方便安裝管理 OSX 裡需要用到但預設沒安裝的套件。
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
