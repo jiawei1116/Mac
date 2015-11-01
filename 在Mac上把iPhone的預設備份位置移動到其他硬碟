@@ -1,29 +1,17 @@
 http://iphone4.tw/forums/showthread.php?t=114621
+https://changeyu.wordpress.com/2015/03/25/你的macbook-air總是空間不夠嗎？都是iphone備份惹的禍/
 
-前幾天為了開發程式，跟人借了一台iPad來測試，
 
-結果沒想到裡面資料超級多，光是iBooks就快4GB，全部的東西用iTunes備份下來總共要30GB，
-
-於是，我的SSD爆了。 
 
 
 
 
 所以，今天要教大家的是，如何移動預設的備份位置，
-
 首先你必須要準備一個外接硬碟，或者雙硬碟的就使用雙硬碟。
-
 （基本上建議雙硬碟，因為若備份時外接硬碟忘記插上我不知道會發生什麼事）
-
-
-
-
 之後，先到 /Users/使用者名稱/Library/Application Support/MobileSync 裡面，
 
 把Backup這個資料夾複製到外面的硬碟，本次範例是移動到 /Volumes/Mac\ Data/iPhone/Backup
-
-
-
 接著，複製完畢之後，砍掉原本在MobileSync裡面的Backup資料夾，之後在終端機輸入：
 
 ln -s /Volumes/Mac\ Data/iPhone/Backup /Users/使用者名稱/Library/Application\ Support/MobileSync/Backup
@@ -31,8 +19,31 @@ ln -s /Volumes/Mac\ Data/iPhone/Backup /Users/使用者名稱/Library/Applicatio
 
 ln -s 你要的目標移動位置 /Users/使用者名稱/Library/Application\ Support/MobileSync/Backup
 
-
-
 這樣，你會在原本的MobileSync看到一個Backup的捷徑，這樣就完成了。
 
-完成以後，就再也不必擔心SSD爆掉的問題了XD
+這是終端機開啟的畫面，而我們要打指令，指令是以下的順序：
+
+「ln -s 外接磁碟的資料夾 本機iOS備份資料夾」
+
+外接硬碟的資料夾指的就是剛剛講的，在硬碟上新增的「iPhone Backup」裡面的「Backup」，而本機iOS備份資料夾指的則是，一開始「MobileSync」裡面的「Backup」。所以真實指令就會像下面所示：
+
+「ln -s  /Volumes/Mac\ Data/iPhone/Backup /Users/使用者名稱/Library/Application\ Support/MobileSync」
+
+請記得，第一個是「L」不是「I」！！！請記得，第一個是「L」不是「I」！！！請記得，第一個是「L」不是「I」！！！
+
+很重要所以說三遍，我一開始就因為這個小細節而吃了大虧…
+
+2015/10/14更新 – 「ln -s」這後面要記得空一格啊…下面所有留言的人的問題都來自於這個非常小的點，切記切記！
+
+不確定自己路徑的人也沒關係，我們可以直接把資料夾拖曳到終端機裡面他自己會跑出來對應的路徑，這樣絕對不會錯：
+
+同樣的方法如法炮製在本機iOS備份資料夾上。但有人如果不知道要去哪裡找到「MobileSync」這個資料夾也沒關係，到桌面的畫面上，同時按「shift+command+g」就會顯示一個視窗出現，在該視窗中輸入「~/Library/Application Support/MobileSync」，就會跳出來了。
+
+
+如法炮製將「MobileSync」也拖曳到終端機裡面後，按下enter確認指令，你會發現在你的MobileSync裡面看到一個捷徑長得像這樣子：
+
+Screen Shot 2015-03-25 at 上午1.55.43
+
+看到這個不要驚慌，代表說它已經把你iPhone的路徑從原本本機上的「MobileSync」指向到外接式硬碟上的「iPhone Backup」裡的「Backup」了。
+
+接著再去itunes裡面手動備份我們的iPhone，從此之後iPhone的備份路徑都會跑到你的外接式硬碟裡面的，而我們的電腦也就不用苦於空間不足的問題要一直刪東西或是重新開機了！
