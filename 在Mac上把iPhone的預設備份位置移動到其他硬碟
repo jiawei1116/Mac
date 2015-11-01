@@ -1,0 +1,38 @@
+http://iphone4.tw/forums/showthread.php?t=114621
+
+前幾天為了開發程式，跟人借了一台iPad來測試，
+
+結果沒想到裡面資料超級多，光是iBooks就快4GB，全部的東西用iTunes備份下來總共要30GB，
+
+於是，我的SSD爆了。 
+
+
+
+
+所以，今天要教大家的是，如何移動預設的備份位置，
+
+首先你必須要準備一個外接硬碟，或者雙硬碟的就使用雙硬碟。
+
+（基本上建議雙硬碟，因為若備份時外接硬碟忘記插上我不知道會發生什麼事）
+
+
+
+
+之後，先到 /Users/使用者名稱/Library/Application Support/MobileSync 裡面，
+
+把Backup這個資料夾複製到外面的硬碟，本次範例是移動到 /Volumes/Mac\ Data/iPhone/Backup
+
+
+
+接著，複製完畢之後，砍掉原本在MobileSync裡面的Backup資料夾，之後在終端機輸入：
+
+ln -s /Volumes/Mac\ Data/iPhone/Backup /Users/使用者名稱/Library/Application\ Support/MobileSync/Backup
+也就是
+
+ln -s 你要的目標移動位置 /Users/使用者名稱/Library/Application\ Support/MobileSync/Backup
+
+
+
+這樣，你會在原本的MobileSync看到一個Backup的捷徑，這樣就完成了。
+
+完成以後，就再也不必擔心SSD爆掉的問題了XD
